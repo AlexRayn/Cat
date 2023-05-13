@@ -6,6 +6,7 @@ public class Cat
 
     static double minWeight;
     private double maxWeight;
+    static double returnMassFood;
 
     public Cat()
     {
@@ -19,7 +20,7 @@ public class Cat
     public void meow()
     {
         weight = weight - 1;
-        System.out.println("Meow");
+        System.out.print("Meow ");
     }
 
     public void feed(Double amount)
@@ -36,7 +37,16 @@ public class Cat
     {
         return weight;
     }
-
+    public void getWeightFood()
+    {
+        returnMassFood = weight - originWeight;
+        System.out.println("масса седенной еды -  " + returnMassFood );
+    }
+    public void toilet()
+    {
+     weight = weight - 100;
+     System.out.println("животное сходило в туалет");
+    }
     public String getStatus()
     {
         if(weight < minWeight) {
