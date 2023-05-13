@@ -2,9 +2,9 @@
 public class Cat
 {
     private double originWeight;
-    private double weight;
+    static double weight;
 
-    private double minWeight;
+    static double minWeight;
     private double maxWeight;
 
     public Cat()
@@ -16,9 +16,9 @@ public class Cat
 
     }
 
-    public void meow(Double amount)
+    public void meow()
     {
-        weight = weight - amount;
+        weight = weight - 1;
         System.out.println("Meow");
     }
 
@@ -50,6 +50,7 @@ public class Cat
         }
         else {
             return "Playing";
+
         }
     }
 }
