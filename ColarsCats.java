@@ -1,0 +1,9 @@
+public enum ColarsCats {
+    WHITE COLLAR,
+    BLACK COLLAR,
+    SMOKE COLLAR,
+    CREAM COLLAR,
+    CINAMON COLLAR,
+    BROWN COLLAR,
+    FAWN COLLAR,
+}

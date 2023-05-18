@@ -8,6 +8,9 @@ public class Cat
     static double maxWeight;
     static double returnMassFood;
     static int count;
+    public static final int AMOUNT_EYES = 2;
+    public static final double MIN_WEIGHT = 1000.0;
+    public static final double MAX_WEIGHT = 9000.0;
 
     public Cat()
     {
