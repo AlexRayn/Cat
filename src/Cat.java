@@ -16,59 +16,64 @@ public class Cat
         minWeight = 1000.0;
         maxWeight = 9000.0;
         count = count + 1;
+        System.out.println("Создана новая кошка");
     }
-
-    public void meow()
-    {
-        weight = weight - 1;
-        System.out.print("Meow ");
-    }
-
-    public void feed(Double amount)
-    {
-        weight = weight + amount;
-    }
-
-    public void drink(Double amount)
-    {
-        weight = weight + amount;
-    }
-
-    public Double getWeight()
-    {
-        return weight;
-    }
-    public void getWeightFood()
-    {
-        returnMassFood = weight - originWeight;
-        System.out.println("масса седенной еды -  " + returnMassFood );
-    }
-    public void toilet()
-    {
-     weight = weight - 100;
-     System.out.println("животное сходило в туалет");
-    }
-    static int getCount()
-    {
-        return count;
-    }
-    public String getStatus()
-    {
-        if(weight < minWeight) {
-            count = count - 1;
-            return "Dead";
-
+        public void meow ()
+        {
+            if (getWeight() >= 1000 && getWeight() <= 9000){weight = weight - 1;
+            System.out.print("МЯВК ");}
+            else {System.out.println("мёртвое животное не издает звуки");}
         }
-        else if(weight > maxWeight) {
-            count = count - 1;
-            return "Exploded";
-        }
-        else if(weight > originWeight) {
-            return "Sleeping";
-        }
-        else {
-            return "Playing";
 
+        public void feed (Double amount)
+        {
+            if (getWeight() >= 1000 && getWeight() <= 9000){weight = weight + amount;}
+            else {System.out.println("мёртвое животное не может есть");}
         }
-    }
+
+        public void drink (Double amount)
+        {
+            if (getWeight() >= 1000 && getWeight() <= 9000)
+            {
+                weight = weight + amount;
+            }
+            else {System.out.println("мёртвое животное не может пить");}
+        }
+
+        public Double getWeight ()
+        {
+            return weight;
+        }
+        public void getWeightFood ()
+        {
+            returnMassFood = weight - originWeight;
+            System.out.println("масса седенной еды -  " + returnMassFood);
+        }
+        public void toilet ()
+        {
+            if (getWeight() >= 1000 && getWeight() <= 9000) {
+                weight = weight - 100;
+                System.out.println("животное сходило в туалет");
+            }
+            else {System.out.println("мёртвое животное не может ходить в туалет");}
+        }
+        static int getCount ()
+        {
+            return count;
+        }
+        public String getStatus ()
+        {
+            if (weight < minWeight) {
+                count = count - 1;
+                return "умер(ла)";
+            }
+            else if (weight > maxWeight) {
+                count = count - 1;
+                return "взорван(а)";
+            } else if (weight > originWeight) {
+                return "спит";
+            }
+            else {return "играет";
+            }
+        }
 }

@@ -7,7 +7,7 @@ public class Loader
         System.out.println("феликс " + felix.getStatus());
         Cat bob = new Cat();
         System.out.println("Боб " + bob.getStatus());
-        bob.feed(9000.);
+        bob.feed(6000.);
         bob.getWeightFood();
         System.out.println("bob " + bob.getStatus());
         Cat alex = new Cat();
@@ -15,7 +15,6 @@ public class Loader
         alex.getStatus();
         Cat murka = new Cat();
         System.out.println("вес мурки - " + murka.getWeight());
-
         murka.meow();
         System.out.println("вес мурки - " + murka.getWeight());
         while(murka.getWeight() >= 1000 )
@@ -24,6 +23,7 @@ public class Loader
         }
         System.out.println( );
         System.out.println("Мурка " + murka.getStatus());
+        murka.toilet();
         Cat tom = new Cat();
         System.out.println("вес тома " + tom.getWeight());
         tom.feed(400.0);
