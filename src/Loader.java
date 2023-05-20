@@ -1,6 +1,10 @@
 
 public class Loader
 {
+    private static Cat getKitten()
+    {
+        return new Cat(1100.0);
+    }
     public static void main(String[] args)
     {
         Cat felix = new Cat();
@@ -17,10 +21,7 @@ public class Loader
         System.out.println("вес мурки - " + murka.getWeight());
         murka.meow();
         System.out.println("вес мурки - " + murka.getWeight());
-        while(murka.getWeight() >= 1000 )
-        {
-            murka.meow();
-        }
+        while(murka.getWeight() >= 1000 ) {murka.meow();}
         System.out.println( );
         System.out.println("Мурка " + murka.getStatus());
         murka.toilet();
@@ -33,5 +34,11 @@ public class Loader
         System.out.println("вес тома " + tom.getWeight());
         System.out.println("том " + tom.getStatus());
         System.out.println("количество живых кошек - " + Cat.getCount());
+        Cat bars = new Cat(1100.0);
+        System.out.println("барс " + bars.getStatus());
+        Cat oskar = new Cat(1100.0);
+        System.out.println("оскар " + oskar.getStatus());
+        Cat lama = new Cat(1100.0);
+        System.out.println("лама " + lama.getStatus());
     }
 }

@@ -21,6 +21,11 @@ public class Cat
         count = count + 1;
         System.out.println("Создана новая кошка");
     }
+    public Cat(double weight){
+        this();
+        this.weight = weight;
+        System.out.println("Создана кошка с весом: " + getWeight());
+    }
         public void meow ()
         {
             if (getWeight() >= 1000 && getWeight() <= 9000){weight = weight - 1;
