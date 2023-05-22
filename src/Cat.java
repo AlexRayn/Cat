@@ -8,6 +8,7 @@ public class Cat
     static double maxWeight;
     static double returnMassFood;
     static int count;
+    private String color;
     public static final int AMOUNT_EYES = 2;
     public static final double MIN_WEIGHT = 1000.0;
     public static final double MAX_WEIGHT = 9000.0;
@@ -47,6 +48,7 @@ public class Cat
             }
             else {System.out.println("мёртвое животное не может пить");}
         }
+        public String getColor(){return color;}
 
         public Double getWeight ()
         {
@@ -57,6 +59,7 @@ public class Cat
             returnMassFood = weight - originWeight;
             System.out.println("масса седенной еды -  " + returnMassFood);
         }
+        public void setColor(String color){this.color = color;}
         public void toilet ()
         {
             if (getWeight() >= 1000 && getWeight() <= 9000) {

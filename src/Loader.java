@@ -11,7 +11,7 @@ public class Loader
         System.out.println("феликс " + felix.getStatus());
         Cat bob = new Cat();
         System.out.println("Боб " + bob.getStatus());
-        bob.feed(6000.);
+        bob.feed(6000.0);
         bob.getWeightFood();
         System.out.println("bob " + bob.getStatus());
         Cat alex = new Cat();
