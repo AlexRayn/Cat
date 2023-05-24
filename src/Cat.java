@@ -12,7 +12,6 @@ public class Cat
     public static final int AMOUNT_EYES = 2;
     public static final double MIN_WEIGHT = 1000.0;
     public static final double MAX_WEIGHT = 9000.0;
-
     public Cat()
     {
         weight = 1500.0 + 3000.0 * Math.random();
@@ -20,71 +19,105 @@ public class Cat
         minWeight = 1000.0;
         maxWeight = 9000.0;
         count = count + 1;
-        System.out.println("Создана новая кошка");
+        System.out.println("Создана кошка с весом: " + getWeight());
     }
-    public Cat(double weight){
+    public Cat(double weight)
+    {
         this();
         this.weight = weight;
         System.out.println("Создана кошка с весом: " + getWeight());
     }
-        public void meow ()
+    public Cat(Cat Cat)
+    {
+        weight = Cat.getWeight();
+        count = count + 1;
+        originWeight = Cat.getWeight();
+        System.out.println("Создана кошка с весом: " + getWeight());
+    }
+    public void setWeight(){
+        this.weight = weight;
+    }
+    public void meow ()
+    {
+        if (getWeight() >= 1000 && getWeight() <= 9000)
         {
-            if (getWeight() >= 1000 && getWeight() <= 9000){weight = weight - 1;
-            System.out.print("МЯВК ");}
-            else {System.out.println("мёртвое животное не издает звуки");}
+            weight = weight - 1;
+            System.out.print("МЯВК ");
         }
-
-        public void feed (Double amount)
+        else
         {
-            if (getWeight() >= 1000 && getWeight() <= 9000){weight = weight + amount;}
-            else {System.out.println("мёртвое животное не может есть");}
+            System.out.println("мёртвое животное не издает звуки");
         }
-
-        public void drink (Double amount)
+    }
+    public void feed (Double amount)
+    {
+        if (getWeight() >= 1000 && getWeight() <= 9000)
         {
-            if (getWeight() >= 1000 && getWeight() <= 9000)
-            {
-                weight = weight + amount;
-            }
-            else {System.out.println("мёртвое животное не может пить");}
+            weight = weight + amount;
         }
-        public String getColor(){return color;}
-
-        public Double getWeight ()
+        else
         {
-            return weight;
+            System.out.println("мёртвое животное не может есть");
         }
-        public void getWeightFood ()
+    }
+    public void drink (Double amount)
+    {
+        if (getWeight() >= 1000 && getWeight() <= 9000)
         {
-            returnMassFood = weight - originWeight;
-            System.out.println("масса седенной еды -  " + returnMassFood);
+            weight = weight + amount;
         }
-        public void setColor(String color){this.color = color;}
-        public void toilet ()
+        else {System.out.println("мёртвое животное не может пить");
+        }
+    }
+    public Double getWeight ()
+    {
+        return weight;
+    }
+    public void getWeightFood ()
+    {
+        returnMassFood = weight - originWeight;
+        System.out.println("масса седенной еды -  " + returnMassFood);
+    }
+    public void setColor(String ColorType)
+    {
+        ColorType = color;
+    }
+    public String getColor() {
+        return color;
+    }
+    public void toilet ()
+    {
+        if (getWeight() >= 1000 && getWeight() <= 9000)
         {
-            if (getWeight() >= 1000 && getWeight() <= 9000) {
-                weight = weight - 100;
-                System.out.println("животное сходило в туалет");
-            }
-            else {System.out.println("мёртвое животное не может ходить в туалет");}
+            weight = weight - 100;
+            System.out.println("животное сходило в туалет");
         }
-        static int getCount ()
+        else {System.out.println("мёртвое животное не может ходить в туалет");
+        }
+    }
+    static int getCount ()
+    {
+        return count;
+    }
+    public String getStatus ()
+    {
+        if (weight < minWeight)
         {
-            return count;
+            count = count - 1;
+            return "умер(ла)";
         }
-        public String getStatus ()
+        else if (weight > maxWeight)
         {
-            if (weight < minWeight) {
-                count = count - 1;
-                return "умер(ла)";
-            }
-            else if (weight > maxWeight) {
-                count = count - 1;
-                return "взорван(а)";
-            } else if (weight > originWeight) {
-                return "спит";
-            }
-            else {return "играет";
-            }
+            count = count - 1;
+            return "взорван(а)";
         }
+        else if (weight > originWeight)
+        {
+            return "спит";
+        }
+        else
+        {
+            return "играет";
+        }
+    }
 }

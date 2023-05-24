@@ -1,3 +1,4 @@
+import javax.swing.plaf.synth.ColorType;
 
 public class Loader
 {
@@ -27,7 +28,7 @@ public class Loader
         murka.toilet();
         Cat tom = new Cat();
         System.out.println("вес тома " + tom.getWeight());
-        tom.feed(400.0);
+        tom.feed(500.0);
         tom.drink(10.0);
         System.out.println("вес тома " + tom.getWeight());
         tom.toilet();
@@ -40,5 +41,14 @@ public class Loader
         System.out.println("оскар " + oskar.getStatus());
         Cat lama = new Cat(1100.0);
         System.out.println("лама " + lama.getStatus());
+        System.out.println("===============================================");
+        Cat vitalii = new Cat(tom);
+        System.out.println("виталий - " + vitalii.getWeight());
+        System.out.println("том - " + tom.getWeight());
+        vitalii.feed(2000.0);
+        vitalii.drink(200.0);
+        System.out.println("===============================================");
+        System.out.println("виталий - " + vitalii.getWeight());
+        System.out.println("том - " + tom.getWeight());
     }
 }
